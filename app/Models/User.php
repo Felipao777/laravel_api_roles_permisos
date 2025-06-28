@@ -6,7 +6,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+//use Laravel\Passport\HasApiTokens;
+
 use Laravel\Sanctum\HasApiTokens;
+
 
 class User extends Authenticatable
 {
@@ -42,4 +45,25 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    
+    public function roles() {
+        return $this->belongsToMany(Role::class);
+    }
+
+    public function assignRole($role){
+        // "gerente" | {"id": 30, "name": "admin"}
+        if(is_string($role)){
+            $role = Role::where("nombre", $role)->firstOrFail();
+        }
+        $this->roles()->sync($role, false);
+    }
+
+    public function permisos(){
+        
+        return $this->roles->map->permisos->flatten()->pluck("nombre")->unique();
+    } 
+
+
+
+
 }

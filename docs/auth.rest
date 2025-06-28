@@ -1,0 +1,59 @@
+POST http://127.0.0.1:8000/api/v1/auth/register
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name":"Admin",
+    "email":"admin@mail.com",
+    "password":"admin12345",
+    "c_password":"admin12345"
+}
+
+### Login con Sanctum
+POST http://127.0.0.1:8000/api/v1/auth/login
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email":"felipe@mail.com",
+    "password":"felipe12345"
+}
+
+### Login con Sanctum
+POST http://127.0.0.1:8000/api/v1/auth/login
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email":"admin@mail.com",
+    "password":"admin54321"
+}
+
+### Login con Passport
+POST http://127.0.0.1:8000/api/passport/login
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email": "felipe@mail.com",
+    "password": "felipe12345"
+}
+
+
+### Perfil
+GET http://127.0.0.1:8000/api/v1/auth/profile
+Accept: application/json
+//Authorization: Bearer 55|TJ7HGJsI1VDMtXUyBZiIclsFNKWBLLEN2X5fjMNB5be17100
+Authorization: Bearer 56|PxMheHoAkYzxmzEGqjlAOIKCVIk67W0oeYM7zBip207ba034
+
+### perfil con passport
+GET http://127.0.0.1:8000/api/passport/profile
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmRjZGY5NTJiMGU3ZmJiYjJkNTUwMTcyNzZmYTE4ZjkwYTFjMTJiNDI3ZTgyNzg5MmZlODgyYmRiZmI5OWIxMmM3YTUwZDdhOTNhOTE4OTAiLCJpYXQiOjE2OTEwMTkzMzcuNzcxMzkzLCJuYmYiOjE2OTEwMTkzMzcuNzcxMzk1LCJleHAiOjE3MjI2NDE3MzcuNzYzNjE1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.SbtatSnqj-lp3Ustn3ivf_hMLaTTW6FRVfRQTYTYgwuigAuhW8DtvVarF10x0r-lfhn2MvDKL3ome5J_aofSXeGFQDQHGNFjVhlWUbXeUelTTss1QwOUYmAo8S1gAsp8dYB8_r0MrAsfVo6njuFLtMqS1t8J7Qus6zMbzihflKeLGDYs10dGMcbYRbPWPz7WB9kUv59j5jLcZ9KA2kOvQaIEOF1lOxZlx8hwTlicgDiY7tMhqwM_8Vhj28CNnnN54RzUCiHDh_OmWSbLFkCw8uUgdw0DAQI-jbRtTeG5azPqTE9O4Nl2HJm9fXQGYkP1xD3Uj6f0ATvEP28hsaAGprSrsIX16Grcp4Qje3woEmIvVNmE01UL1Y568dU4PgfiZ4k6WasYY3Onu5xQWZcosj8sEBIP8yOII9vZ5uR_9KtEsdWECrzf5YD6QDByf_ej6IyDXokXvKC5Sj7hMcNW8iAwxxHQhA9sY2wgXd-BypGnUCcHrVJBf5f-pXSt_gmJHmdAiaXVUshCZygiBpK7DF-BYJRiQlEssNqq22USIKszV8Za0Gl97fUSCHJyUmg5MfGkXzLFCNCg7dghRtTebp93XbPDXqSMtHPbo8PuKe1UxH8F51iPhPjsX_yeamHJ8cw5KfGPNXpJDkfrJeKndex5kZ1LF-AVS4L-sn4D7gA
+
+
+
+### Salir
+POST  http://127.0.0.1:8000/api/v1/auth/logout
+Accept: application/json
+Authorization: Bearer 54|neBy7B1I4ja8m85gVvHJHFZjPJXZSmcpO39LdtX564f4f97d

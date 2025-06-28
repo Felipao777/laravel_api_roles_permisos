@@ -1,0 +1,42 @@
+### Listar
+GET http://127.0.0.1:8000/api/users
+Accept: application/json
+//Authorization: Bearer 55|TJ7HGJsI1VDMtXUyBZiIclsFNKWBLLEN2X5fjMNB5be17100
+Authorization: Bearer 56|PxMheHoAkYzxmzEGqjlAOIKCVIk67W0oeYM7zBip207ba034
+
+### Listar con parametros
+GET http://127.0.0.1:8000/api/users?limit=10&page=1&q=feli
+Accept: application/json
+//Authorization: Bearer 55|TJ7HGJsI1VDMtXUyBZiIclsFNKWBLLEN2X5fjMNB5be17100
+Authorization: Bearer 56|PxMheHoAkYzxmzEGqjlAOIKCVIk67W0oeYM7zBip207ba034
+
+### Guardar usuario
+POST http://127.0.0.1:8000/api/users
+Accept: application/json
+Content-Type: application/json 
+
+{
+    "name": "Juan",
+    "email": "juan@mail.com",
+    "password": "juan12345"
+}
+
+### mostrar
+GET http://127.0.0.1:8000/api/users/3
+Accept: application/json
+//Authorization: Bearer 55|TJ7HGJsI1VDMtXUyBZiIclsFNKWBLLEN2X5fjMNB5be17100
+Authorization: Bearer 56|PxMheHoAkYzxmzEGqjlAOIKCVIk67W0oeYM7zBip207ba034
+
+### Modificar usuario
+PUT http://127.0.0.1:8000/api/users/3
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "Juan Modificado",
+    "email": "juan@mail2.com"
+}
+
+### eliminar
+DELETE http://127.0.0.1:8000/api/users/3
+Accept: application/json
